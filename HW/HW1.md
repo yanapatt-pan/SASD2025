@@ -8,7 +8,7 @@
 
 ---
 YouTube References: https://www.youtube.com/watch?v=vqEg37e4Mkw  
-Author: Yanapatt Pankaseam 66102010236
-Words: 70
-Characters without spaces: 907
-ช่วงนาที: 0 ถึง 7.25
+Author: Yanapatt Pankaseam 66102010236  
+Words: 70  
+Characters without spaces: 907  
+ช่วงนาที: 0:00 ถึง 7:25  
