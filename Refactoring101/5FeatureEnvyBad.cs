@@ -11,12 +11,21 @@ public class FeatureEnvy
 {
     public void TestAdd()
     {
-        var point = AddPoint(new Point(2, 3), new Point(4, 5));
+        /* Solution 1
+        var point = Point.Add(new Point(2, 3), new Point(4, 5));
+        */
+
+        /* Solution 2
+        var point = new Point(2, 3).Add(new Point(4,5));
+        */ 
+
+        //Solution 3
+        var point = new Point(2, 3) + new Point(4, 5);
     }
-    public Point AddPoint(Point a, Point b)
+    /*public Point AddPoint(Point a, Point b)
     {
         return new Point(a.X + b.X, a.Y + b.Y);
-    }
+    }*/
 }
 
 public class Point
@@ -29,7 +38,21 @@ public class Point
         Y = y;
     }
 
-    public Point AddPoint(Point a, Point b)
+    /* Solution 1
+    public static Point Add(Point a, Point b)
+    {
+        return new Point(a.X + b.X, a.Y + b.Y);
+    }
+    */
+    /* Solution 2
+
+    public Point Add(Point b)
+    {
+        return new Point(this.X + b.X, this.Y + b.Y);
+    }
+    */
+    // Solution 3 Operator Overloading (Only C++ and C#)
+    public static Point operator +(Point a, Point b)
     {
         return new Point(a.X + b.X, a.Y + b.Y);
     }
