@@ -84,9 +84,9 @@ namespace Refactoring101
             public required int Year { get; set; }
 
             // ข้อ 5
-            public void Format()
+            public string Format()
             {
-                Console.WriteLine($"{Day:00}/{Month:00}/{Year:0000}");
+               return $"{Day:00}/{Month:00}/{Year:0000}";
             }
         }
 
