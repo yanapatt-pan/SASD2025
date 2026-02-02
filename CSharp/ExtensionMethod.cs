@@ -12,5 +12,11 @@ public static class StringUtil
     {
         return s.Substring(0, s.Length / 2);
     }
+
+    // Exercise 7
+    public static string SecondHalf(this string s)
+    {
+        return s.Substring(s.Length / 2);
+    }
 }
 

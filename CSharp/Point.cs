@@ -25,7 +25,15 @@ public class Point
         return new (left.X + right.X, left.Y + right.Y);
     }
 
-    public double GetDistance()
+    delegate double PointDelegate();
+    public void TestPointDelegate()
+    {
+        PointDelegate func3 = GetDistance;
+        double result = func3();
+        Console.WriteLine($"Result is {result}");
+    }
+
+    private double GetDistance()
     {
         return Math.Sqrt(X * X + Y * Y);
     }

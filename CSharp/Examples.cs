@@ -10,16 +10,17 @@ public class Examples
 {
     public void Run()
     {
-        VarTest();                  // 1
-        StringInterpolation();      // 2
-        var d = GetDistance(3, 4);  // 3
+        //VarTest();                  // 1
+        //StringInterpolation();      // 2
+        //var d = GetDistance(3, 4);  // 3
         //TestCollection();           // 4
-        //TestPerson();               // 5
+        TestPerson();               // 5
         TestCustomer();             // 6
-        //TestDelegate();             // 7
-        //ExtensionMethod();          // 8
+        TestDelegate();             // 7
+        ExtensionMethod();          // 8
         //Nullable();                 // 9
-        Exercice();                 // 10
+        ExerciseTwo();                // 10
+        ExerciseThree();              // 11
     }
 
     // 1. var
@@ -103,13 +104,15 @@ public class Examples
     // 6.
     void TestCustomer()
     {
+        // Updated
         Customer cust = new()
         {
             Name = "John",
-            Order = new()
+            Age = 20,
+            Order = new List<Product>
             {
-                new() {Name = "Noodle", Price = 40.5m},
-                new() {Name = "Potato", Price = 32.0m},
+                new Product("Noodle", "USA"),
+                new Product("Potato", "Thailand"),
             }
         };
     }
@@ -117,17 +120,21 @@ public class Examples
     // 7.
     void TestDelegate()
     {
-        new DelegateSample().TestDelegate();
+        //new DelegateSample().TestDelegate();
+        Point p = new Point(3.0, 4.0);
+        p.TestPointDelegate();
     }
 
     // 8.
     void ExtensionMethod()
     {
         // เรียกแบบ Utility Method ปกติ
-        Console.WriteLine(StringUtil.Half("Hello World, John."));
+        //Console.WriteLine(StringUtil.Half("Hello World, John."));
 
         // เรียกแบบ Extension Method
-        Console.WriteLine("Hello World, John.".Half());
+        //Console.WriteLine("Hello World, John.".Half());
+        Console.WriteLine("Yanapatt Pankaseam".Half());
+        Console.WriteLine("Yanapatt Pankaseam".SecondHalf());
     }
 
     // 9.
@@ -142,10 +149,31 @@ public class Examples
     }
 
     // 10.
-    void Exercice()
+    void ExerciseTwo()
     {
+        /*
         var p = new Point(3, 4); // With new object can set value only one time if value can get only.
         Console.WriteLine($"{p.X}, {p.Y}");
         Console.WriteLine("Yanapatt Pankaseam".Half());
+        */
+
+        // 2.
+        Console.WriteLine($"Exercise Two");
+        int a = 12345;
+        // 2.1
+        Console.WriteLine($"Number = ({a,10:N0})");
+        // 2.2
+        Console.WriteLine($"Number = ({a,10:D8})");
+        Console.WriteLine($"\n");
+    }
+
+    // 11.
+    void ExerciseThree()
+    {
+        Console.WriteLine($"Exercise Three");
+        static double GetDistance(double x, double y) => Math.Sqrt(x * x + y * y);
+        double result = GetDistance(3.0, 4.0);
+        Console.WriteLine($"The result is {result}");
+        Console.WriteLine($"\n");
     }
 }
